@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSAA Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <p class="eyebrow">DSA LEARNING LAB</p>
+            <h1>ADSAA Algorithm Visualizer</h1>
+            <p class="subtitle">
+                Explore algorithms. Understand logic. Visualize every step.
+            </p>
+        </header>
+
+        <section class="card">
+            <h2>Explore Learning Modules</h2>
+            <p class="section-description">
+                Choose a topic to explore its algorithms and visualizations.
+            </p>
+
+            <div class="module-grid">
+                <button class="module-card" onclick="showModule('sorting')">
+                    <span class="module-icon">↕️</span>
+                    <strong>Sorting Algorithms</strong>
+                    <span>Bubble, Selection, Insertion, Merge and Quick Sort</span>
+                </button>
+
+                <button class="module-card" onclick="showModule('searching')">
+                    <span class="module-icon">🔎</span>
+                    <strong>Searching Algorithms</strong>
+                    <span>Linear Search and Binary Search</span>
+                </button>
+
+                <button class="module-card" onclick="showModule('graphs')">
+                    <span class="module-icon">🕸️</span>
+                    <strong>Graph Algorithms</strong>
+                    <span>BFS, DFS and Dijkstra's Shortest Path</span>
+                </button>
+
+                <button class="module-card" onclick="showModule('structures')">
+                    <span class="module-icon">🧱</span>
+                    <strong>Data Structures</strong>
+                    <span>Stacks, Queues and Trees</span>
+                </button>
+
+            </div>
+        </section>
+
+        <section id="module-content" class="card">
+            <h2>Welcome to the Learning Lab!</h2>
+            <p>Select any module above to explore it.</p>
+        </section>
+
+        <div id="sorting-visualizer" style="display: none;">
+            <section class="card">
+                <h2>Current Sorting Visualizer</h2>
+
+                <label for="algorithm">Choose a sorting algorithm:</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+
+            <div>
+                <label for="userNumbers">Enter numbers (comma-separated):</label>
+                <input type="text" id="userNumbers" placeholder="e.g. 45, 12, 30, 5">
+                <button onclick="useUserNumbers()">Use These Numbers</button>
+                <button onclick="startSort()">Start Sorting</button>
+            </div>
+
+            <label for="speed">Animation speed (lower is faster):</label>
+            <input type="range" id="speed" min="10" max="500" value="100">
+
+            <div id="bars"></div>
+            <p id="status">Ready to visualize!</p>
+        </section>
+
+        <section class="card">
+            <h2>Algorithm Statistics</h2>
+            <p>Comparisons: <strong id="comparisons">0</strong></p>
+            <p>Swaps / Moves: <strong id="swaps">0</strong></p>
+            <p id="complexity">
+                Bubble Sort: Best O(n), Average O(n²), Worst O(n²).
+                Space Complexity: O(1).
+            </p>
+        </section>
+        </div>
+
+        <footer>
+            ADSAA Project | HTML, CSS, JavaScript and C++ learning
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
